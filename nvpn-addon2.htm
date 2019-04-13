@@ -79,29 +79,10 @@ input[type=submit]:hover {
       <label for="country">Country</label>
     </div>
     <div class="col-75">
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <input type="submit" value="Submit">
-  </div>
-    <div class="row">
-    <div class="col-25">
-      <label for="country">Stop vpn server</label>
-    </div>
-    <div class="row">
-    <input type="Submit" name="country"value="stop">
-  </div>
-  </form>
-</div>
-</body>
-</html>
+      <select id="countrypd" name="country">
+        </select>
 <script>
-let dropdown = document.getElementById('country');
+let dropdown = document.getElementById('countrypd');
 dropdown.length = 0;
 let defaultOption = document.createElement('option');
 defaultOption.text = 'Choose Country';
@@ -127,4 +108,20 @@ request.onerror = function() {
 };
 request.send();
 </script>
+   </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="country">Stop vpn server</label>
+    </div>
+    <div class="row">
+    <input type="Submit" name="country"value="stop">
+  </div>
+  </form>
+</div>
+</body>
+</html>
 
