@@ -4,7 +4,8 @@ curl --silent https://nordvpn.com/wp-admin/admin-ajax.php?action=servers_countri
 else
 /etc/init.d/openvpn-client stop
 /etc/init.d/dnscrypt-proxy-2 stop
-if [$1 != "stop"]
+fi
+if [ $1 != "stop" ]
 then
 server="$(curl --silent 'https://nordvpn.com/wp-admin/admin-ajax.php?action=servers_recommendations&filters=\{%22country_id%22:'$1'\}' | jq --raw-output 'limit(1;.[])|.hostname')"
 wget -O /etc/openvpn/config/client/nordvpn.ovpn https://downloads.nordcdn.com/configs/files/ovpn_legacy/servers/$server.udp1194.ovpn
@@ -17,5 +18,4 @@ echo push \"sndbuf 393216\" >> /etc/openvpn/config/client/nordvpn.ovpn
 sed -i 's/mssfix 1450/mssfix 1460/g' /etc/openvpn/config/client/nordvpn.ovpn
 /etc/init.d/openvpn-client start
 /etc/init.d/dnscrypt-proxy-2 start
-fi
 fi
