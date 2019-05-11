@@ -1,5 +1,5 @@
 # nordvpn-r7800
-Change vpn server menu for r7800 router by selecting the country from a pull down menu
+Change vpn server menu for r7800 router by selecting the country from a pull down menu <br>
 installation
 1 enable telnet
 2 create dir /etc/openvpn/config/client
